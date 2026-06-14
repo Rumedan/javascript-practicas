@@ -1,0 +1,290 @@
+
+/* ESTILOS CSS PARA LA APLICACIÓN DE CARTERA DIGITAL */
+
+
+:root {
+   --primary-color: #1e90ff;
+   --success-color: #28a745;
+   --danger-color: #dc3545;
+   --warning-color: #ffc107;
+   --info-color: #17a2b8;
+   --dark-color: #343a40;
+   --light-color: #f8f9fa;
+   --border-radius: 10px;
+   --transition: all 0.3s ease;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease;
+}
+/* ANIMACIÓN DE ENTRADA */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ /* TITULOS Y TEXTOS */
+
+ h1, h2 {
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+ }
+ p {
+    color: #666;
+    line-height: 1.6;
+
+ }
+ 
+ /* FORMULARIOS */
+ .form-group {
+    margin-bottom: 20px;
+
+ }
+ .form-group label {
+    color: var(--dark-color);
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+
+ }
+ .form-control {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: var(--transition);
+
+}
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+
+
+}
+/* BOTONES */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+
+}
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+.btn-success:hover {
+    background-color: #218838;
+
+}
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}
+.btn-outline-secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: white;
+
+}
+.btn-outline-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.w-100 {
+    width: 100%;
+}
+.mb-2 { margin-bottom: 15px; }
+.mb-3 { margin-bottom: 20px; }
+.mb-4 { margin-bottom: 30px; }
+
+.mt-3 { margin-top: 20px; }
+
+/* MENSAJES DE ALERTA */
+
+.alert {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+
+    }
+    .alert-info {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+    }
+
+    /*LISTAS*/
+    .list-group {
+        list-style: none;
+    }
+    .list-group-item {
+        padding: 15px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        transition: var(--transition);
+    }
+    .list-group-item:hover {
+        background-color: #f9f9f9;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    .contact-name {
+        font-weight: 600;
+        color: var(--dark-color);
+        display: block;
+        margin-bottom: 5px;
+    }
+    .contact-details {
+        color: #777;
+        font-size: 0.85rem;
+
+    }
+
+    /* SALDO Y DINERO */
+
+    .saldo {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--success-color);
+     margin: 20px 0;
+     font-weight: 700;
+    }
+    .monto-positivo {
+        color: var(--success-color);
+        font-weight: 600;
+    }
+    .monto-negativo {
+        color: var(--danger-color);
+        font-weight: 600;
+    }
+
+    /* MODAL */
+
+    .modal-overlay  {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        animation: fadeIn 0.3s ease;
+        display: none;
+}
+.modal-box {
+    background: white;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+    .saldo {
+        font-size: 1.5rem;
+    }
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    .btn {
+        padding: 10px 15px;
+    }
+}
+
+/* UTILIDADES */
+
+.text-center {
+    text-align: center;
+}
+.text-muted {
+    color: #999;
+}
+.text-success {
+    color: var(--success-color);
+}
+.fw-bold {
+    font-weight: 600;
+}
+.d-flex {
+    display: flex;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
