@@ -14,6 +14,10 @@ $(document).ready(function() {
       $('#alert-container').html('<div class="alert alert-danger">❌ Ingresa un monto válido.</div>');
       return;
     }
+    if(monto > 5000000) {
+  $('#alert-container').html('<div class="alert alert-danger">❌ El monto máximo por depósito es $5.000.000.</div>');
+  return;
+}
 
     // Actualizar saldo
     let saldoActual = parseFloat(localStorage.getItem("saldo") || 60000);
