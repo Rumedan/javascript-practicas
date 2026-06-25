@@ -1,18 +1,57 @@
 $(document).ready(function() {
  
 // Búsqueda de contactos
-$('#buscarContacto').on('input', function() {
-const busqueda = $(this).val().toLowerCase();
-$('#contactList li').each(function() {
-const nombre = $(this).find('.contact-name').text().toLowerCase();
-if(nombre.includes(busqueda)) {
-$(this).show();
-      } else {
-$(this).hide();
-      }
+// Lista de contactos en memoria (sincronizada con el DOM)
+function obtenerContactos() {
+  let contactos = [];
+  $('#contactList li').each(function() {
+    contactos.push({
+      nombre: $(this).find('.contact-name').text(),
+      elemento: $(this)
     });
   });
+  return contactos;
+}
 
+// Autocompletar
+$('#buscarContacto').on('input', function() {
+  const busqueda = $(this).val().toLowerCase();
+  const sugerencias = $('#sugerencias');
+
+  if(busqueda === "") {
+    sugerencias.hide().empty();
+    return;
+  }
+
+  const contactos = obtenerContactos();
+  const coincidencias = contactos.filter(function(c) {
+    return c.nombre.toLowerCase().includes(busqueda);
+  });
+
+  sugerencias.empty();
+
+  if(coincidencias.length === 0) {
+    sugerencias.append('<li class="list-group-item text-muted">Sin resultados</li>');
+  } else {
+    coincidencias.forEach(function(c) {
+      sugerencias.append(`<li class="list-group-item sugerencia-item" style="cursor:pointer;">${c.nombre}</li>`);
+    });
+  }
+
+  sugerencias.show();
+});
+
+// Al hacer click en una sugerencia, filtra la lista real
+$(document).on('click', '.sugerencia-item', function() {
+  const nombreSeleccionado = $(this).text();
+  $('#buscarContacto').val(nombreSeleccionado);
+  $('#sugerencias').hide();
+
+  $('#contactList li').each(function() {
+    const nombre = $(this).find('.contact-name').text();
+    $(this).toggle(nombre === nombreSeleccionado);
+  });
+});
 // Agregar nuevo contacto
 $('#btnGuardarContacto').click(function() {
 const nombre = $('#nombre').val();

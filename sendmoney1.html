@@ -15,11 +15,12 @@
   <div class="container">
     <h2>📤 Enviar Dinero</h2>
 
-    <div class="form-group mb-3">
-      <label>Buscar contacto:</label>
-      <input type="text" class="form-control" id="buscarContacto" placeholder="Buscar en agenda...">
-    </div>
 
+<div class="form-group mb-3 position-relative">
+  <label>Buscar contacto:</label>
+  <input type="text" class="form-control" id="buscarContacto" placeholder="Buscar en agenda..." autocomplete="off">
+  <ul id="sugerencias" class="list-group position-absolute w-100" style="z-index: 10; display: none;"></ul>
+</div>
     <button id="btnAgregarContacto" class="btn btn-outline-primary w-100 mb-4" data-bs-toggle="modal" data-bs-target="#modalContacto">
   ➕ Agregar nuevo contacto
 </button>
