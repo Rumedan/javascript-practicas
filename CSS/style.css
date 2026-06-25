@@ -3,16 +3,17 @@
 
 
 :root {
-   --primary-color: #1e90ff;
-   --success-color: #28a745;
-   --danger-color: #dc3545;
-   --warning-color: #ffc107;
-   --info-color: #17a2b8;
-   --dark-color: #343a40;
-   --light-color: #f8f9fa;
-   --border-radius: 10px;
-   --transition: all 0.3s ease;
-
+  /* Paleta Fintech */
+  --azul-marino: #0a2540;
+  --azul-primario: #1a73e8;
+  --verde-exito: #16a34a;
+  --rojo-error: #dc2626;
+  --gris-fondo: #f5f7fa;
+  --blanco: #ffffff;
+  --texto-oscuro: #1a1a2e;
+  --texto-claro: #6b7280;
+  --radius: 12px;
+  --transicion: all 0.25s ease;
 }
 * {
     margin: 0;
@@ -20,20 +21,21 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 20px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--gris-fondo);
+  color: var(--texto-oscuro);
+  min-height: 100vh;
 }
+
 /* CONTENEDOR PRINCIPAL */
 .container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: slideIn 0.5s ease;
+  max-width: 400px;
+  margin: 50px auto;
+  background: var(--blanco);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(10, 37, 64, 0.08);
+  animation: slideIn 0.5s ease;
 }
 /* ANIMACIÓN DE ENTRADA */
 
@@ -51,11 +53,12 @@ body {
  /* TITULOS Y TEXTOS */
 
  h1, h2 {
-    color: var(--dark-color);
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 600;
- }
+  color: var(--azul-marino);
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
  p {
     color: #666;
     line-height: 1.6;
@@ -91,54 +94,61 @@ body {
 }
 /* BOTONES */
 .btn {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
+
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
+  transform: translateY(-1px);
 }
+
 .btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-
+  background-color: var(--azul-primario);
+  color: var(--blanco);
 }
+
 .btn-primary:hover {
-    background-color: #0056b3;
-
+  background-color: #155cb8;
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
 }
+
 .btn-success {
-    background-color: var(--success-color);
-    color: white;
+  background-color: var(--verde-exito);
+  color: var(--blanco);
 }
+
 .btn-success:hover {
-    background-color: #218838;
-
+  background-color: #128a3e;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
 }
+
 .btn-danger {
-    background-color: var(--danger-color);
-    color: white;
+  background-color: var(--rojo-error);
+  color: var(--blanco);
 }
-.btn-danger:hover {
-    background-color: #c82333;
-}
-.btn-outline-secondary {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    background-color: white;
 
+.btn-danger:hover {
+  background-color: #b91c1c;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
 }
+
+.btn-outline-secondary {
+  border: 2px solid #d1d5db;
+  color: var(--texto-claro);
+  background: var(--blanco);
+}
+
 .btn-outline-secondary:hover {
-    background-color: #f0f0f0;
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
 }
 
 .w-100 {
@@ -213,21 +223,37 @@ body {
 
     /* SALDO Y DINERO */
 
-    .saldo {
-    font-size: 2.5rem;
-    text-align: center;
-    color: var(--success-color);
-     margin: 20px 0;
-     font-weight: 700;
-    }
-    .monto-positivo {
-        color: var(--success-color);
-        font-weight: 600;
-    }
-    .monto-negativo {
-        color: var(--danger-color);
-        font-weight: 600;
-    }
+   .saldo {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--verde-exito);
+  margin: 20px 0;
+  letter-spacing: -1px;
+}
+  .monto-positivo {
+  color: var(--verde-exito);
+  font-weight: 700;
+}
+
+.monto-negativo {
+  color: var(--rojo-error);
+  font-weight: 700;
+}
+
+.list-group-item {
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  transition: var(--transicion);
+  background: var(--blanco);
+}
+
+.list-group-item:hover {
+  border-color: var(--azul-primario);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.06);
+}
 
     /* MODAL */
 
@@ -253,19 +279,36 @@ body {
 /* RESPONSIVE */
 
 @media (max-width: 480px) {
-    .container {
-        margin: 20px;
-        padding: 20px;
-    }
-    .saldo {
-        font-size: 1.5rem;
-    }
-    h1, h2 {
-        font-size: 1.5rem;
-    }
-    .btn {
-        padding: 10px 15px;
-    }
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    margin: 15px auto;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    font-size: 1.4rem;
+  }
+
+  .saldo {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  .list-group-item {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .contact-details {
+    font-size: 0.75rem;
+  }
 }
 
 /* UTILIDADES */

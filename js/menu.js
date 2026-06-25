@@ -1,7 +1,27 @@
 
 $(document).ready(function() {
+// Calcular totales de depositado y enviado
+function calcularResumen() {
+  const movimientos = JSON.parse(localStorage.getItem("movimientos") || "[]");
 
-  // Inicializar saldo si no existe
+  let totalDepositado = 0;
+  let totalEnviado = 0;
+
+  movimientos.forEach(function(mov) {
+    if(mov.monto > 0) {
+      totalDepositado += mov.monto;
+    } else {
+      totalEnviado += Math.abs(mov.monto);
+    }
+  });
+
+  $('#totalDepositado').text("$" + totalDepositado.toLocaleString());
+  $('#totalEnviado').text("$" + totalEnviado.toLocaleString());
+}
+
+calcularResumen();
+  
+// Inicializar saldo si no existe
   if(localStorage.getItem("saldo") === null) {
     localStorage.setItem("saldo", 60000);
   }
