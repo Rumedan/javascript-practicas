@@ -32,21 +32,21 @@ calcularResumen();
 
   // Eventos botones con mensaje de redirección
   $('#btnDepositar').click(function() {
-    $('#mensaje-redireccion').html('<div class="alert alert-info">↪️ Redirigiendo a Depositar...</div>');
+    $('#mensaje-redireccion').hide().html('<div class="alert alert-info">↪️ Redirigiendo a Depositar...</div>').fadeIn(400);
     setTimeout(() => {
       window.location.href = "deposito1.html";
     }, 1000);
   });
 
   $('#btnEnviar').click(function() {
-    $('#mensaje-redireccion').html('<div class="alert alert-info">↪️ Redirigiendo a Enviar Dinero...</div>');
+    $('#mensaje-redireccion').hide().html('<div class="alert alert-info">↪️ Redirigiendo a Enviar Dinero...</div>').fadeIn(400);
     setTimeout(() => {
       window.location.href = "sendmoney1.html";
     }, 1000);
   });
 
   $('#btnMovimientos').click(function() {
-    $('#mensaje-redireccion').html('<div class="alert alert-info">↪️ Redirigiendo a Últimos Movimientos...</div>');
+    $('#mensaje-redireccion').hide().html('<div class="alert alert-info">↪️ Redirigiendo a Últimos Movimientos...</div>').fadeIn(400);
     setTimeout(() => {
       window.location.href = "transactions1.html";
     }, 1000);
