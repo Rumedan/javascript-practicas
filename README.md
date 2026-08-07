@@ -14,7 +14,7 @@ Una aplicación web moderna de gestión financiera construida con HTML5, CSS3, B
 ## 🛠️ Tecnologías
 
 - **Frontend**: HTML5, CSS3, Bootstrap 5
-- **JavaScript**: Vanilla JS + jQuery
+- **JavaScript**:  JS + jQuery
 - **Almacenamiento**: localStorage
 - **Control de versiones**: Git
 
