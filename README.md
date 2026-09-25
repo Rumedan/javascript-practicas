@@ -40,4 +40,4 @@ git clone https://github.com/Rumedan/alke-wallet.git
 
 ## 🌐 Demo en vivo
 
-[Abre la billetera](https://rumedan.github.io/alke-wallet)
+[Abre la billetera]( https://rumedan.github.io/javascript-practicas/)
